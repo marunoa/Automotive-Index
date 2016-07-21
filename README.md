@@ -11,7 +11,7 @@ To run sql statements from an external file, use the `\i [filepath]` command.
 1. Create a new postgres user named `indexed_cars_user`
 1. Create a new database named `indexed_cars` owned by `indexed_cars_user`
 1. Run the provided `scripts/car_models.sql` script on the `indexed_cars` database
-1. Run the provided `scripts/car_model_data.sql` script on the `indexed_cars` database **10 times**  
+1. Run the provided `scripts/car_model_data.sql` script on the `indexed_cars` database **10 times**
    _there should be **223380** rows in `car_models`_
 
 ## Timing Select Statements
@@ -26,7 +26,7 @@ Enable timing queries in Postgres by toggling the `\timing` command in the psql 
 
 ## Indexing
 
-Given the current query requirements, "should get all make_titles", "should get a list of all model_titles by the make_code", etc.  
+Given the current query requirements, "should get all make_titles", "should get a list of all model_titles by the make_code", etc.
 Create indexes on the columns that would improve query performance.
 
 To add an index:
@@ -46,7 +46,7 @@ Write the following statements in `indexing.sql`
 1. Create a query to list all fields from all `car_models` in years between `2010` and `2015`, and note the time somewhere (should have 78840 rows)
 1. Create a query to list all fields from all `car_models` in the year of `2010`, and note the time somewhere (should have 13140 rows)
 
-Compare the times of the queries before and after the table has been indexes.  
+Compare the times of the queries before and after the table has been indexes.
 
 Why are queries #4 and #5 not running faster?
 
@@ -55,5 +55,5 @@ Why are queries #4 and #5 not running faster?
 1. Add your recorded indexing statements to the `scripts/car_models.sql`
 1. Delete the `car_models` table
 1. Run the provided `scripts/car_models.sql` script on the `indexed_cars` database
-1. Run the provided `scripts/car_model_data.sql` script on the `indexed_cars` database **10 times**  
+1. Run the provided `scripts/car_model_data.sql` script on the `indexed_cars` database **10 times**
    _there should be **223380** rows in `car_models`_
